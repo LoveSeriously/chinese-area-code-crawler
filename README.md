@@ -9,8 +9,8 @@
 
 ## 爬取数据
 
-执行`exec.Executor`类。执行前修改`ROOT_AREA`和`TARGET_FILE`变量。
+执行`com.exec.Executor`类。执行前修改`ROOT_AREA`和`TARGET_FILE`变量。
 
 ## 爬取的数据生成SQL
 
-执行`exec.SQLGen`类，执行前修改`TARGET_FILE`和`SOURCE_FILE`变量。
+执行`com.exec.SQLGen`类，执行前修改`TARGET_FILE`和`SOURCE_FILE`变量。
