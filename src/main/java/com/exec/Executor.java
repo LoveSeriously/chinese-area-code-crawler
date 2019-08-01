@@ -163,7 +163,10 @@ public class Executor {
                     if (elements.size() != 1) {
                         elements = document.getElementsByClass("villagetable");
                         if (elements.size() != 1) {
-                            throw new RuntimeException();
+                            elements = document.getElementsByClass("villagehead");
+                            if (elements.size() != 1) {
+                                throw new RuntimeException();
+                            }
                         }
                     }
                 }
@@ -171,8 +174,11 @@ public class Executor {
 
             elements = elements.get(0).child(0).children();
             List<Area> areas = new ArrayList<>(elements.size());
+
+            Integer isLeaf = 0; // 不是
             for (Element element : elements) {
                 String className = element.className();
+
                 if ("tr".equalsIgnoreCase(element.nodeName()) &&
                         ("citytr".equalsIgnoreCase(className)
                                 || "countytr".equalsIgnoreCase(className)
@@ -187,6 +193,10 @@ public class Executor {
                     String areaId, areaName;
                     boolean leaf = true;
                     Element areaIdElement = tdElements.get(0);
+                    Element leafElement = null;
+                    if ("villagetr".equalsIgnoreCase(className)) {
+                        leafElement = tdElements.get(1);
+                    }
                     Element areaNameElement = tdElements.get(tdElementsSize - 1);
                     if (areaIdElement.children().size() == 1 && "a".equalsIgnoreCase(areaIdElement.child(0).nodeName())) {
                         areaId = areaIdElement.child(0).text();
@@ -199,11 +209,15 @@ public class Executor {
                         throw new RuntimeException();
                     }
 
+                    if (null != leafElement) {
+                        isLeaf = 1;   // 是
+                    }
+
                     Category category = new Category.CategoryBuilder()
                             .setCategoryCode(areaId)
                             .setCategoryName(areaName)
                             .setpNames(parentArea.fullName + "/" + areaName)
-                            .setIsLeaf(leaf ? 0 : 1)
+                            .setIsLeaf(isLeaf)
                             .build();
 
                     if(categorys.size() != 0) {
