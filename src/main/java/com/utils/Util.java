@@ -96,8 +96,7 @@ public class Util {
      */
     public static String getPidByParent(List<Category> categorys, String parent) {
         for (Category category : categorys) {
-            String parentCode = getParentCode(parent);
-            if (category.getCategoryCode().equals(parentCode)) {
+            if (category.getCategoryCode().equals(parent)) {
                 return category.getId();
             }
         }
@@ -112,8 +111,7 @@ public class Util {
      */
     public static String getPidsByParent(List<Category> categorys, String parent) {
         for (Category category : categorys) {
-            String parentCode = getParentCode(parent);
-            if (category.getCategoryCode().equals(parentCode)) {
+            if (category.getCategoryCode().equals(parent)) {
                 return category.getpIds() + "/" + category.getId();
             }
         }
