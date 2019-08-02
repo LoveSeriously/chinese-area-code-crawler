@@ -90,34 +90,24 @@ public class Util {
     }
 
     /**
-     * 根据父parent得到pid
+     * 根据父parent得到Category
      * @param parent
      * @return
      */
-    public static String getPidByParent(List<Category> categorys, String parent) {
+    public static Category getCategoryByParent(List<Category> categorys, String parent) {
+        Category category1 = new Category.CategoryBuilder().build();
         for (Category category : categorys) {
-            if (parent.length() == 4 && category.getCategoryCode().length() == 4) { // 市 下面的市辖区 ,县
-                return category.getId();
-            }
-            if (category.getCategoryCode().equals(parent)) {
-                return category.getId();
+           /* if (parent.length() == 4 && category.getCategoryCode().length() == 4) { // 市 下面的市辖区 ,县
+                 category1.setpId(category.getId());
+                 category1.setpIds(category.getpIds() + "/" + category.getId());
+                 category1.setpNames(category.getpNames());
+            }*/
+            if (getParentCode(category.getCategoryCode()).equals(getParentCode(parent))) {
+                category1.setpId(category.getId());
+                category1.setpIds(category.getpIds() + "/" + category.getId());
+                category1.setpNames(category.getpNames());
             }
         }
-        return null;
-    }
-
-    /**
-     * 根据父parent得到pids
-     * @param categorys
-     * @param parent
-     * @return
-     */
-    public static String getPidsByParent(List<Category> categorys, String parent) {
-        for (Category category : categorys) {
-            if (category.getCategoryCode().equals(parent)) {
-                return category.getpIds() + "/" + category.getId();
-            }
-        }
-        return null;
+        return category1;
     }
 }
