@@ -55,9 +55,9 @@ public class Executor {
 //        AREA_LIST.add(new Area("44", "广东省", "广东省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("45", "广西壮族自治区", "广西壮族自治区", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("46", "海南省", "海南省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
-        AREA_LIST.add(new Area("50", "重庆市", "重庆市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
+//        AREA_LIST.add(new Area("50", "重庆市", "重庆市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
 //        AREA_LIST.add(new Area("51", "四川省", "四川省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
-//        AREA_LIST.add(new Area("52", "贵州省", "贵州省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
+        AREA_LIST.add(new Area("52", "贵州省", "贵州省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
 //        AREA_LIST.add(new Area("53", "云南省", "云南省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("54", "西藏自治区", "西藏自治区", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("61", "陕西省", "陕西省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
@@ -87,9 +87,9 @@ public class Executor {
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("44").setCategoryName("广东省").setpNames("广东省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("45").setCategoryName("广西壮族自治区").setpNames("广西壮族自治区").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("46").setCategoryName("海南省").setpNames("海南省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
-        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("50").setCategoryName("重庆市").setpNames("重庆市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
+//        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("50").setCategoryName("重庆市").setpNames("重庆市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("51").setCategoryName("四川省").setpNames("四川省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
-//        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("52").setCategoryName("贵州省").setpNames("贵州省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
+        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("52").setCategoryName("贵州省").setpNames("贵州省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("53").setCategoryName("云南省").setpNames("云南省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("54").setCategoryName("西藏自治区").setpNames("西藏自治区").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("61").setCategoryName("陕西省").setpNames("陕西省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
@@ -107,13 +107,13 @@ public class Executor {
     private static OkHttpClient HTTP_CLIENT = new OkHttpClient();
 
     //private  static List<AreaCode> areaCodes = new ArrayList<>();
-    private  static List<Category> categorys = new ArrayList<>();
+    private static List<Category> categorys = new ArrayList<>();
 
     public static void main(String[] args) {
         int len = CATEGORY_LIST.size();
-        for (int i = 0; i < len; i ++) {
+        for (int i = 0; i < len; i++) {
             int index = i;
-            Thread thread = new Thread(()->{
+            Thread thread = new Thread(() -> {
                 ROOT_CATEGORY = CATEGORY_LIST.get(index);
                 try (BufferedWriter bufferedWriter = new BufferedWriter(
                         new OutputStreamWriter(new FileOutputStream(TARGET_FILE + CATEGORY_LIST.get(index).getCategoryName() + ".sql"), StandardCharsets.UTF_8))) {
@@ -131,39 +131,44 @@ public class Executor {
 
     private static void wrieSql(BufferedWriter bufferedWriter) {
         categorys = Util.removeDuplicateId(categorys);
-        //util.bufferedWriterWrite(bufferedWriter, "insert into um_category(ID, CATEGORY_CODE, CATEGORY_NAME, P_NAMES, P_ID, CREATE_TIME, CATEGORY_TYPE) values");
-        for (int i = 0; i < categorys.size(); i ++){
+        Integer count = 0;
+        for (int i = 0; i < categorys.size(); i++) {
             if (categorys.get(i).getCategoryName().contains(",")) {
                 throw new RuntimeException("不支持的区域名称（有英文逗号） " + categorys.get(i).getCategoryName());
             }
+
+            if (count == i) {
+                Util.bufferedWriterWrite(bufferedWriter, "insert into um_category(ID, CATEGORY_CODE, CATEGORY_NAME, P_NAMES, P_ID, CREATE_TIME, CATEGORY_TYPE, IS_LEAF) values\n");
+            }
             //util.bufferedWriterWrite(bw,area.getCategoryCode() + ',' + area.getCategoryName() + ',' + area.getpNames() + ',' + area.getpId() + '\n');
             String line1 = "";
-                    if(categorys.size() - 1 == i) {
-                        line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s')\n",
-                                categorys.get(i).getId(),
-                                categorys.get(i).getCategoryCode(),
-                                categorys.get(i).getCategoryName(),
-                                "数据字典/行政区域划分/"+categorys.get(i).getpNames(),
-                                categorys.get(i).getpId(),
-                                categorys.get(i).getCreateTime(),
-                                "3",
-                                categorys.get(i).getIsLeaf());
-                    } else {
-                        line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s'),\n",
-                                categorys.get(i).getId(),
-                                categorys.get(i).getCategoryCode(),
-                                categorys.get(i).getCategoryName(),
-                                "数据字典/行政区域划分/"+categorys.get(i).getpNames(),
-                                categorys.get(i).getpId(),
-                                categorys.get(i).getCreateTime(),
-                                "3",
-                                categorys.get(i).getIsLeaf());
-                    }
-
-            Util.bufferedWriterWrite(bufferedWriter, line1);
-            if ((resolvedCount++ & 0x7F) == 0) {
-                System.out.println("已处理 " + resolvedCount);
+            if (categorys.size() - 1 == i) {
+                line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s')\n",
+                        categorys.get(i).getId(),
+                        categorys.get(i).getCategoryCode(),
+                        categorys.get(i).getCategoryName(),
+                        "数据字典/行政区域划分/" + categorys.get(i).getpNames(),
+                        categorys.get(i).getpId(),
+                        categorys.get(i).getCreateTime(),
+                        "3",
+                        categorys.get(i).getIsLeaf());
+            } else {
+                line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s'),\n",
+                        categorys.get(i).getId(),
+                        categorys.get(i).getCategoryCode(),
+                        categorys.get(i).getCategoryName(),
+                        "数据字典/行政区域划分/" + categorys.get(i).getpNames(),
+                        categorys.get(i).getpId(),
+                        categorys.get(i).getCreateTime(),
+                        "3",
+                        categorys.get(i).getIsLeaf());
             }
+            Util.bufferedWriterWrite(bufferedWriter, line1);
+
+            System.out.println("已处理 " + i + "条");
+
+
+            count += 50;
         }
     }
 
@@ -212,6 +217,7 @@ public class Executor {
         requestBuilder.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
         requestBuilder.header("Accept-Language", "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3");
         requestBuilder.header("Referer", "http://www.stats.gov.cn/waf_verify.htm");
+        requestBuilder.header("Cookie", "_trs_uv=jyr1gamz_6_ciri; AD_RS_COOKIE=20082855; __utma=207252561.1066798203.1564680696.1564680696.1564680696.1; __utmz=207252561.1564680696.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); wzws_cid=d50ee460f6aa7ab6fd15e01ce74b3413c2a0f9bb730ef751ba9fdc7bfa1a2fcb24e52cfef5f02d6ee099f0dedaf7d699bd00d44c042e8d2abeb167fd4e94ad10");
         requestBuilder.cacheControl(CacheControl.FORCE_NETWORK);
         System.out.println("url => " + urlBuilder.toString());
         return requestBuilder;
@@ -281,7 +287,7 @@ public class Executor {
                         isLeaf = 1;   // 是
                     }
 
-                    if (!areaName.equalsIgnoreCase("市辖区")&&!areaName.equalsIgnoreCase("县")) {
+                    if (!areaName.equalsIgnoreCase("市辖区") && !areaName.equalsIgnoreCase("县")) {
                         Category category = new Category.CategoryBuilder()
                                 .setCategoryCode(Util.getShortAreaId(areaId))
                                 .setCategoryName(areaName)
@@ -289,20 +295,20 @@ public class Executor {
                                 .setIsLeaf(isLeaf)
                                 .build();
 
-                        if(categorys.size() != 0) {
+                        if (categorys.size() != 0) {
                             category.setpId(Util.getPidByParent(categorys, parentCode));
                             category.setpIds(Util.getPidsByParent(categorys, parentCode));
                         } else {
                             ROOT_CATEGORY.setCategoryCode(ROOT_CATEGORY.getCategoryCode() + "00");
                             categorys.add(ROOT_CATEGORY);
                             category.setpId(ROOT_CATEGORY.getId());
-                            category.setpIds(ROOT_CATEGORY.getpIds() + "/" +ROOT_CATEGORY.getId());
+                            category.setpIds(ROOT_CATEGORY.getpIds() + "/" + ROOT_CATEGORY.getId());
                         }
 
-                        areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName + '/' + areaName, category.getId(),"", leaf));
+                        areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName + '/' + areaName, category.getId(), "", leaf));
                         categorys.add(category);
                     }
-                    areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName, ROOT_CATEGORY.getId(),"", leaf));
+                    areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName, ROOT_CATEGORY.getId(), "", leaf));
                 }
             }
             return areas;
@@ -317,7 +323,7 @@ public class Executor {
         private String parents;
         private boolean leaf;
 
-        public Area(String code, String name, String fullName, String parent,String parents, boolean leaf) {
+        public Area(String code, String name, String fullName, String parent, String parents, boolean leaf) {
             this.code = code;
             this.name = name;
             this.fullName = fullName;
