@@ -133,44 +133,39 @@ public class Executor {
     }
 
     private static void wrieSql(BufferedWriter bufferedWriter) {
-        categorys = Util.removeDuplicateId(categorys);
-        Integer count = 0;
-        for (int i = 0; i < categorys.size(); i++) {
-            if (categorys.get(i).getCategoryName().contains(",")) {
-                throw new RuntimeException("不支持的区域名称（有英文逗号） " + categorys.get(i).getCategoryName());
-            }
+        int count = 0;
+        int index = 0;
 
-            if (count == i) {
+        for (Map.Entry<String, Category> entry : pidMark.entrySet()) {
+            String id = entry.getKey();
+            Category category = entry.getValue();
+            if (count == index) {
                 Util.bufferedWriterWrite(bufferedWriter, "insert into um_category(ID, CATEGORY_CODE, CATEGORY_NAME, P_NAMES, P_ID, CREATE_TIME, CATEGORY_TYPE, IS_LEAF) values\n");
             }
-            //util.bufferedWriterWrite(bw,area.getCategoryCode() + ',' + area.getCategoryName() + ',' + area.getpNames() + ',' + area.getpId() + '\n');
-            String line1 = "";
-            if (categorys.size() - 1 == i) {
+            String line1;
+            if (pidMark.entrySet().size() - 1 == index) {
                 line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s')\n",
-                        categorys.get(i).getId(),
-                        categorys.get(i).getCategoryCode(),
-                        categorys.get(i).getCategoryName(),
-                        "数据字典/行政区域划分/" + categorys.get(i).getpNames(),
-                        categorys.get(i).getpId(),
-                        categorys.get(i).getCreateTime(),
+                        category.getId(),
+                        category.getCategoryCode(),
+                        category.getCategoryName(),
+                        "数据字典/行政区域划分/" + category.getpNames(),
+                        category.getpId(),
+                        category.getCreateTime(),
                         "3",
-                        categorys.get(i).getIsLeaf());
+                        category.getIsLeaf());
             } else {
-                line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s'),\n",
-                        categorys.get(i).getId(),
-                        categorys.get(i).getCategoryCode(),
-                        categorys.get(i).getCategoryName(),
-                        "数据字典/行政区域划分/" + categorys.get(i).getpNames(),
-                        categorys.get(i).getpId(),
-                        categorys.get(i).getCreateTime(),
+                line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s')\n",
+                        category.getId(),
+                        category.getCategoryCode(),
+                        category.getCategoryName(),
+                        "数据字典/行政区域划分/" + category.getpNames(),
+                        category.getpId(),
+                        category.getCreateTime(),
                         "3",
-                        categorys.get(i).getIsLeaf());
+                        category.getIsLeaf());
             }
             Util.bufferedWriterWrite(bufferedWriter, line1);
-
-            System.out.println("已处理 " + i + "条");
-
-
+            System.out.println("已处理 " + index + "条");
             count += 50;
         }
     }

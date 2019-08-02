@@ -76,23 +76,6 @@ public class Util {
     }
 
     /**
-     * 去除重复Id
-     *
-     * @param list
-     * @return
-     */
-    public static List removeDuplicateId(List<Category> list) {
-        for (int i = 0; i < list.size() - 1; i++) {
-            for (int j = list.size() - 1; j > i; j--) {
-                if (list.get(j).getId().equals(list.get(i).getId())) {
-                    list.remove(j);
-                }
-            }
-        }
-        return list;
-    }
-
-    /**
      * 根据父parent得到Category
      *
      * @param pidMark
@@ -100,18 +83,19 @@ public class Util {
      */
     public static Category getCategoryByParent(Map<String, Category> pidMark, String parentCode) {
         Category category1 = new Category.CategoryBuilder().build();
-        for(Map.Entry<String, Category> mark : pidMark.entrySet()) {
-            /*if (parentCode.length() == 4 && mark.getValue().getCategoryCode().length() == 4) { // 市 下面的市辖区 ,县
-                 category1.setpId(mark.getValue().getId());
-                 category1.setpIds(mark.getValue().getpIds() + "/" + mark.getValue().getId());
-                 category1.setpNames(mark.getValue().getpNames());
-            }*/
-            if (getParentCode(mark.getKey()).equalsIgnoreCase(getParentCode(parentCode))) {
-                category1.setpId(mark.getValue().getId());
-                category1.setpIds(mark.getValue().getpIds() + "/" + mark.getValue().getId());
-                category1.setpNames(mark.getValue().getpNames());
-            }
+
+        /*if (parentCode.length() == 4 && mark.getValue().getCategoryCode().length() == 4) { // 市 下面的市辖区 ,县
+             category1.setpId(mark.getValue().getId());
+             category1.setpIds(mark.getValue().getpIds() + "/" + mark.getValue().getId());
+             category1.setpNames(mark.getValue().getpNames());
+        }*/
+        Category category = pidMark.get(parentCode);
+        if (null != category) {
+            category1.setpId(category.getId());
+            category1.setpIds(category.getpIds() + "/" + category.getId());
+            category1.setpNames(category.getpNames());
         }
+
         return category1;
     }
 }
