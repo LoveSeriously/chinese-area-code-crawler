@@ -34,7 +34,7 @@ public class Executor {
     private static final List<Category> CATEGORY_LIST = new ArrayList<>();
 
     static {
-//        AREA_LIST.add(new Area("11", "北京市", "北京市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
+        AREA_LIST.add(new Area("11", "北京市", "数据字典/行政区域划分/北京市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("12", "天津市", "天津市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("13", "河北省", "河北省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("14", "山西省", "山西省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
@@ -57,7 +57,7 @@ public class Executor {
 //        AREA_LIST.add(new Area("46", "海南省", "海南省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("50", "重庆市", "数据字典/行政区域划分/重庆市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
 //        AREA_LIST.add(new Area("51", "四川省", "四川省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
-        AREA_LIST.add(new Area("52", "贵州省", "数据字典/行政区域划分/贵州省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
+//        AREA_LIST.add(new Area("52", "贵州省", "数据字典/行政区域划分/贵州省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
 //        AREA_LIST.add(new Area("53", "云南省", "数据字典/行政区域划分/云南省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("54", "西藏自治区", "西藏自治区", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("61", "陕西省", "陕西省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
@@ -66,7 +66,7 @@ public class Executor {
 //        AREA_LIST.add(new Area("64", "宁夏回族自治区", "宁夏回族自治区", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("65", "新疆维吾尔自治区", "新疆维吾尔自治区", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 
-//        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("11"). setCategoryName("北京市").setpNames("北京市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
+        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("11"). setCategoryName("北京市").setpNames("数据字典/行政区域划分/北京市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("12").setCategoryName("天津市").setpNames("天津市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("13").setCategoryName("河北省").setpNames("河北省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("14").setCategoryName("山西省").setpNames("山西省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
@@ -89,7 +89,7 @@ public class Executor {
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("46").setCategoryName("海南省").setpNames("海南省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("50").setCategoryName("重庆市").setpNames("数据字典/行政区域划分/重庆市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("51").setCategoryName("四川省").setpNames("四川省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
-        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("52").setCategoryName("贵州省").setpNames("数据字典/行政区域划分/贵州省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
+//        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("52").setCategoryName("贵州省").setpNames("数据字典/行政区域划分/贵州省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("53").setCategoryName("云南省").setpNames("数据字典/行政区域划分/云南省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("54").setCategoryName("西藏自治区").setpNames("西藏自治区").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("61").setCategoryName("陕西省").setpNames("陕西省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
@@ -133,40 +133,53 @@ public class Executor {
     }
 
     private static void wrieSql(BufferedWriter bufferedWriter) {
-        int count = 0;
+        int count = 50;
         int index = 0;
 
         for (Map.Entry<String, Category> entry : pidMark.entrySet()) {
             String id = entry.getKey();
             Category category = entry.getValue();
-            if (count == index) {
-                Util.bufferedWriterWrite(bufferedWriter, "insert into um_category(ID, CATEGORY_CODE, CATEGORY_NAME, P_NAMES, P_ID, CREATE_TIME, CATEGORY_TYPE, IS_LEAF) values\n");
-            }
             String line1;
-            if (pidMark.entrySet().size() - 1 == index) {
-                line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s')\n",
+            if (count == index) {
+                count += 50;
+                line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s');\n",
                         category.getId(),
                         category.getCategoryCode(),
                         category.getCategoryName(),
-                        "数据字典/行政区域划分/" + category.getpNames(),
+                        category.getpNames(),
                         category.getpId(),
                         category.getCreateTime(),
                         "3",
                         category.getIsLeaf());
+                Util.bufferedWriterWrite(bufferedWriter, line1);
+
+                Util.bufferedWriterWrite(bufferedWriter, "insert into um_category(ID, CATEGORY_CODE, CATEGORY_NAME, P_NAMES, P_ID, CREATE_TIME, CATEGORY_TYPE, IS_LEAF) values\n");
             } else {
-                line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s')\n",
-                        category.getId(),
-                        category.getCategoryCode(),
-                        category.getCategoryName(),
-                        "数据字典/行政区域划分/" + category.getpNames(),
-                        category.getpId(),
-                        category.getCreateTime(),
-                        "3",
-                        category.getIsLeaf());
+                if (pidMark.entrySet().size() - 1 == index) {
+                    line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s')\n",
+                            category.getId(),
+                            category.getCategoryCode(),
+                            category.getCategoryName(),
+                            "数据字典/行政区域划分/" + category.getpNames(),
+                            category.getpId(),
+                            category.getCreateTime(),
+                            "3",
+                            category.getIsLeaf());
+                } else {
+                    line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s'),\n",
+                            category.getId(),
+                            category.getCategoryCode(),
+                            category.getCategoryName(),
+                            "数据字典/行政区域划分/" + category.getpNames(),
+                            category.getpId(),
+                            category.getCreateTime(),
+                            "3",
+                            category.getIsLeaf());
+                }
+                Util.bufferedWriterWrite(bufferedWriter, line1);
             }
-            Util.bufferedWriterWrite(bufferedWriter, line1);
             System.out.println("已处理 " + index + "条");
-            count += 50;
+            index ++;
         }
     }
 
@@ -215,7 +228,7 @@ public class Executor {
         requestBuilder.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
         requestBuilder.header("Accept-Language", "zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3");
         requestBuilder.header("Referer", "http://www.stats.gov.cn/waf_verify.htm");
-        requestBuilder.header("Cookie", "_trs_uv=jyr1gamz_6_ciri; AD_RS_COOKIE=20082855; __utma=207252561.1066798203.1564680696.1564680696.1564680696.1; __utmz=207252561.1564680696.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); wzws_cid=d50ee460f6aa7ab6fd15e01ce74b3413c2a0f9bb730ef751ba9fdc7bfa1a2fcb24e52cfef5f02d6ee099f0dedaf7d699bd00d44c042e8d2abeb167fd4e94ad10");
+        requestBuilder.header("Cookie", "_trs_uv=jyr1gamz_6_ciri; __utma=207252561.1066798203.1564680696.1564680696.1564680696.1; __utmz=207252561.1564680696.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); AD_RS_COOKIE=20082854; wzws_cid=6e36188815c082b8c55043de9f99116d7f031369d11c919105e217f82ef3926cf1f93a683eda796215812a2cba2c14e819c4560dde31faf63879ec93251e4a2f");
         requestBuilder.cacheControl(CacheControl.FORCE_NETWORK);
         System.out.println("url => " + urlBuilder.toString());
         return requestBuilder;
@@ -285,7 +298,7 @@ public class Executor {
                         isLeaf = 1;   // 是
                     }
 
-                    if (!areaName.equalsIgnoreCase("市辖区") && !areaName.equalsIgnoreCase("县")) {
+//                    if (!areaName.equalsIgnoreCase("市辖区") && !areaName.equalsIgnoreCase("县")) {
                         Category category = category = new Category.CategoryBuilder()
                                 .setCategoryCode(Util.getShortAreaId(areaId))
                                 .setCategoryName(areaName)
@@ -314,8 +327,8 @@ public class Executor {
                         categorys.add(category);
                         // 将id做为key, 检索方便
                         pidMark.put(category.getCategoryCode(), category);
-                    }
-                    areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName, ROOT_CATEGORY.getId(), "", leaf));
+//                    }
+//                    areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName, ROOT_CATEGORY.getId(), "", leaf));
                 }
             }
             return areas;
