@@ -36,7 +36,7 @@ public class Executor {
     static {
 //        AREA_LIST.add(new Area("11", "北京市", "北京市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("12", "天津市", "天津市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
-        AREA_LIST.add(new Area("13", "河北省", "河北省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
+//        AREA_LIST.add(new Area("13", "河北省", "河北省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("14", "山西省", "山西省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("15", "内蒙古自治区", "内蒙古自治区", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("21", "辽宁省", "辽宁省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
@@ -55,7 +55,7 @@ public class Executor {
 //        AREA_LIST.add(new Area("44", "广东省", "广东省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("45", "广西壮族自治区", "广西壮族自治区", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("46", "海南省", "海南省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
-//        AREA_LIST.add(new Area("50", "重庆市", "重庆市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
+        AREA_LIST.add(new Area("50", "重庆市", "重庆市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("51", "四川省", "四川省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("52", "贵州省", "贵州省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
 //        AREA_LIST.add(new Area("53", "云南省", "云南省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000",false));
@@ -68,7 +68,7 @@ public class Executor {
 
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("11"). setCategoryName("北京市").setpNames("北京市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("12").setCategoryName("天津市").setpNames("天津市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
-        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("13").setCategoryName("河北省").setpNames("河北省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
+//        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("13").setCategoryName("河北省").setpNames("河北省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("14").setCategoryName("山西省").setpNames("山西省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("15").setCategoryName( "内蒙古自治区").setpNames("内蒙古自治区").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("21"). setCategoryName("辽宁省").setpNames("辽宁省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
@@ -87,7 +87,7 @@ public class Executor {
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("44").setCategoryName("广东省").setpNames("广东省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("45").setCategoryName("广西壮族自治区").setpNames("广西壮族自治区").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("46").setCategoryName("海南省").setpNames("海南省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
-//        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("50").setCategoryName("重庆市").setpNames("重庆市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
+        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("50").setCategoryName("重庆市").setpNames("重庆市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("51").setCategoryName("四川省").setpNames("四川省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("52").setCategoryName("贵州省").setpNames("贵州省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("53").setCategoryName("云南省").setpNames("云南省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setIsLeaf(0).build());
@@ -281,26 +281,28 @@ public class Executor {
                         isLeaf = 1;   // 是
                     }
 
-                    Category category = new Category.CategoryBuilder()
-                            .setCategoryCode(Util.getShortAreaId(areaId))
-                            .setCategoryName(areaName)
-                            .setpNames(parentArea.fullName + "/" + areaName)
-                            .setIsLeaf(isLeaf)
-                            .build();
+                    if (!areaName.equalsIgnoreCase("市辖区")&&!areaName.equalsIgnoreCase("县")) {
+                        Category category = new Category.CategoryBuilder()
+                                .setCategoryCode(Util.getShortAreaId(areaId))
+                                .setCategoryName(areaName)
+                                .setpNames(parentArea.fullName + "/" + areaName)
+                                .setIsLeaf(isLeaf)
+                                .build();
 
-                    if(categorys.size() != 0) {
-                        category.setpId(Util.getPidByParent(categorys, parentCode));
-                        category.setpIds(Util.getPidsByParent(categorys, parentCode));
-                    } else {
-                        ROOT_CATEGORY.setCategoryCode(ROOT_CATEGORY.getCategoryCode() + "00");
-                        categorys.add(ROOT_CATEGORY);
-                        category.setpId(ROOT_CATEGORY.getId());
-                        category.setpIds(ROOT_CATEGORY.getpIds() + "/" +ROOT_CATEGORY.getId());
+                        if(categorys.size() != 0) {
+                            category.setpId(Util.getPidByParent(categorys, parentCode));
+                            category.setpIds(Util.getPidsByParent(categorys, parentCode));
+                        } else {
+                            ROOT_CATEGORY.setCategoryCode(ROOT_CATEGORY.getCategoryCode() + "00");
+                            categorys.add(ROOT_CATEGORY);
+                            category.setpId(ROOT_CATEGORY.getId());
+                            category.setpIds(ROOT_CATEGORY.getpIds() + "/" +ROOT_CATEGORY.getId());
+                        }
+
+                        areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName + '/' + areaName, category.getId(),"", leaf));
+                        categorys.add(category);
                     }
-
-                    areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName + '/' + areaName, category.getId(),"", leaf));
-                    categorys.add(category);
-                    //areaCodes.add(new AreaCode(areaId, areaName, parentArea.fullName + '.' + areaName, getParentCode(parentCode), leaf));
+                    areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName + '/' + areaName, ROOT_CATEGORY.getId(),"", leaf));
                 }
             }
             return areas;

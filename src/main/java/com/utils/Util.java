@@ -96,6 +96,9 @@ public class Util {
      */
     public static String getPidByParent(List<Category> categorys, String parent) {
         for (Category category : categorys) {
+            if (parent.length() == 4 && category.getCategoryCode().length() == 4) { // 市 下面的市辖区 ,县
+                return category.getId();
+            }
             if (category.getCategoryCode().equals(parent)) {
                 return category.getId();
             }
