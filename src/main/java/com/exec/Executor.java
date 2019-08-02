@@ -302,7 +302,7 @@ public class Executor {
                         areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName + '/' + areaName, category.getId(),"", leaf));
                         categorys.add(category);
                     }
-                    areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName + '/' + areaName, ROOT_CATEGORY.getId(),"", leaf));
+                    areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.fullName, ROOT_CATEGORY.getId(),"", leaf));
                 }
             }
             return areas;
