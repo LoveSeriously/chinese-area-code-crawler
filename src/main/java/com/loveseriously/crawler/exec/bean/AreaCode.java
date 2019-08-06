@@ -1,4 +1,4 @@
-package com.bean;
+package com.loveseriously.crawler.exec.bean;
 
 import java.util.Date;
 import java.util.UUID;

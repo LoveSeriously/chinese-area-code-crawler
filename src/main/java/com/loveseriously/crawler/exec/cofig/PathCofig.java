@@ -1,4 +1,4 @@
-package com.cofig;
+package com.loveseriously.crawler.exec.cofig;
 
 /**
  * @author lw

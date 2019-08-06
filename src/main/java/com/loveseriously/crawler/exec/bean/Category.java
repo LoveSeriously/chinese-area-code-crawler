@@ -1,9 +1,7 @@
-package com.bean;
+package com.loveseriously.crawler.exec.bean;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Set;
-import java.util.TreeSet;
 import java.util.UUID;
 
 /**

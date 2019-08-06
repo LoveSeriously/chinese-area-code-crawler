@@ -1,9 +1,8 @@
-package com.exec;
+package com.loveseriously.crawler.exec;
 
-import com.bean.AreaCode;
-import com.bean.Category;
-import com.cofig.PathCofig;
-import com.utils.Util;
+import com.loveseriously.crawler.exec.bean.Category;
+import com.loveseriously.crawler.exec.cofig.PathCofig;
+import com.loveseriously.crawler.core.utils.Util;
 import okhttp3.CacheControl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -142,7 +141,7 @@ public class Executor {
             String line1;
             if (count == index) {
                 count += 50;
-                line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s');\n",
+                line1 = String.format("    ('%s','%s','%s','%s', '%s', '%s','%s', '%s');\n",
                         category.getId(),
                         category.getCategoryCode(),
                         category.getCategoryName(),
@@ -156,7 +155,7 @@ public class Executor {
                 Util.bufferedWriterWrite(bufferedWriter, "insert into um_category(ID, CATEGORY_CODE, CATEGORY_NAME, P_NAMES, P_ID, CREATE_TIME, CATEGORY_TYPE, IS_LEAF) values\n");
             } else {
                 if (pidMark.entrySet().size() - 1 == index) {
-                    line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s')\n",
+                    line1 = String.format("    ('%s','%s','%s','%s', '%s', '%s','%s', '%s')\n",
                             category.getId(),
                             category.getCategoryCode(),
                             category.getCategoryName(),
@@ -166,7 +165,7 @@ public class Executor {
                             "3",
                             category.getIsLeaf());
                 } else {
-                    line1 = String.format("    ('%S','%s','%s','%s', '%s', '%s','%s', '%s'),\n",
+                    line1 = String.format("    ('%s','%s','%s','%s', '%s', '%s','%s', '%s'),\n",
                             category.getId(),
                             category.getCategoryCode(),
                             category.getCategoryName(),

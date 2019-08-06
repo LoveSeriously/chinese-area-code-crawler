@@ -1,10 +1,9 @@
-package com.utils;
+package com.loveseriously.crawler.core.utils;
 
-import com.bean.Category;
+import com.loveseriously.crawler.exec.bean.Category;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 public class Util {
@@ -25,28 +24,10 @@ public class Util {
      */
     public static String getParentCode(String parentCode) {
         int len = parentCode.length();
-        if (len == 1) {
-            return parentCode + "00000000000";
-        } else if (len == 2) {
-            return parentCode + "0000000000";
-        } else if (len == 3) {
-            return parentCode + "000000000";
+        if (len == 2) {
+            return parentCode + "0000"; // 6 位
         } else if (len == 4) {
-            return parentCode + "00000000";
-        } else if (len == 5) {
-            return parentCode + "0000000";
-        } else if (len == 6) {
-            return parentCode + "000000";
-        } else if (len == 7) {
-            return parentCode + "00000";
-        } else if (len == 8) {
-            return parentCode + "0000";
-        } else if (len == 9) {
-            return parentCode + "000";
-        } else if (len == 10) {
-            return parentCode + "00";
-        } else if (len == 11) {
-            return parentCode + "0";
+            return parentCode + "00";   // 6 位
         } else {
             return parentCode;
         }
@@ -83,13 +64,14 @@ public class Util {
      */
     public static Category getCategoryByParent(Map<String, Category> pidMark, String parentCode) {
         Category category1 = new Category.CategoryBuilder().build();
+        String code = Util.getParentCode(parentCode);
 
         /*if (parentCode.length() == 4 && mark.getValue().getCategoryCode().length() == 4) { // 市 下面的市辖区 ,县
              category1.setpId(mark.getValue().getId());
              category1.setpIds(mark.getValue().getpIds() + "/" + mark.getValue().getId());
              category1.setpNames(mark.getValue().getpNames());
         }*/
-        Category category = pidMark.get(parentCode);
+        Category category = pidMark.get(code);
         if (null != category) {
             category1.setpId(category.getId());
             category1.setpIds(category.getpIds() + "/" + category.getId());
