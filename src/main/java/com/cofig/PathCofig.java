@@ -5,8 +5,7 @@ package com.cofig;
  * @date 2019-08-01
  */
 public enum PathCofig {
-    TARGET("C:\\Users\\lw\\Desktop\\tj\\", 1),
-    SOURCE("C:\\Users\\lw\\Desktop\\tj\\50.csv", 2);
+    TARGET("d:\\tj\\", 1);
     private String name;
     private int index;
 
