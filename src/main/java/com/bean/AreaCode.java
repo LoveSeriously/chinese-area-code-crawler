@@ -1,5 +1,6 @@
 package com.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.UUID;
 
@@ -9,7 +10,7 @@ import java.util.UUID;
  * @author lw
  * @date 2019-08-01
  */
-public class AreaCode {
+public class AreaCode implements Serializable {
     private String id;
     private Date createTime;
     private String creatorId;

@@ -6,6 +6,7 @@ package com.cofig;
  */
 public enum PathCofig {
     TARGET("d:\\tj\\", 1);
+//    TARGET("/home/tj/", 1);
     private String name;
     private int index;
 

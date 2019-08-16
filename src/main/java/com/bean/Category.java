@@ -1,5 +1,6 @@
 package com.bean;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Set;
@@ -10,7 +11,7 @@ import java.util.UUID;
  * @author lw
  * @date 2019-08-01
  */
-public class Category {
+public class Category implements Serializable {
     private String id;
     private String createTime;
     private String creatorId;
@@ -28,6 +29,7 @@ public class Category {
     private Integer isLeaf;
     private Integer categoryType;
     private Integer sortNum;
+    private Integer level;
 
     public Category(CategoryBuilder categoryBuilder) {
         this.id = UUID.randomUUID().toString().replaceAll("-", "").toLowerCase();
@@ -49,6 +51,7 @@ public class Category {
         this.isLeaf = categoryBuilder.isLeaf;
         this.categoryType = categoryBuilder.categoryType;
         this.sortNum = categoryBuilder.sortNum;
+        this.level = categoryBuilder.level;
     }
 
     public String getId() {
@@ -179,6 +182,14 @@ public class Category {
         this.sortNum = sortNum;
     }
 
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
     @Override
     public String toString() {
         return "Category{" +
@@ -219,6 +230,7 @@ public class Category {
         private Integer isLeaf;
         private Integer categoryType;
         private Integer sortNum;
+        private Integer level;
 
         public CategoryBuilder setId(String id) {
             this.id = id;
@@ -297,6 +309,15 @@ public class Category {
 
         public CategoryBuilder setSortNum(Integer sortNum) {
             this.sortNum = sortNum;
+            return this;
+        }
+
+        public Integer getLevel() {
+            return level;
+        }
+
+        public CategoryBuilder setLevel(Integer level) {
+            this.level = level;
             return this;
         }
 

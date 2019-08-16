@@ -1,6 +1,8 @@
 package com.utils;
 
 import com.bean.Category;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -8,11 +10,13 @@ import java.util.List;
 import java.util.Map;
 
 public class Util {
+    private static final Logger log = LoggerFactory.getLogger(Util.class);
     public static void bufferedWriterWrite(BufferedWriter bw, String str) {
         try {
             bw.write(str);
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.err.println("Failed to write the str " + str);
+            log.error("执行出错: ", e);
             throw new RuntimeException(e);
         }
     }
@@ -42,6 +46,7 @@ public class Util {
      */
     public static String getShortAreaId(String areaId) {
         if (areaId.length() != 12) {
+            log.error("执行出错: ", new RuntimeException(areaId));
             throw new RuntimeException(areaId);
         }
         if (areaId.endsWith("0000000000")) {
@@ -77,8 +82,17 @@ public class Util {
             category1.setpId(category.getId());
             category1.setpIds(category.getpIds() + "/" + category.getId());
             category1.setpNames(category.getpNames());
+            int result = getLevel(category1);
+            category1.setLevel(result);
         }
 
         return category1;
+    }
+
+    private static int getLevel(Category category1) {
+        String s = category1.getpIds();
+        String[] split = s.split("/");
+        int length = split.length;
+        return length;
     }
 }
