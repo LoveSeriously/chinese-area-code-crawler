@@ -29,7 +29,6 @@ public class Executor {
     private static final List<Area> AREA_LIST = new ArrayList<>();
     private static final List<Category> CATEGORY_LIST = new ArrayList<>();
     private static final String TARGET_FILE = PathCofig.TARGET.getName();
-    private static int index = 0;
     // insert sql
     private static final String INSERT_CATEGORY_SQL = "insert into um_category(ID, CATEGORY_CODE, CATEGORY_NAME, P_NAMES, P_ID, CREATE_TIME, CATEGORY_TYPE, IS_LEAF, P_IDS, ORDER_, LEVEL_) values\n";
     private static final String INSERT_AREACODE_SQL = "insert into um_areacode(id, areaCode, areaName, pNames, pId, createTime, isLeaf, pIds, sortNum, aoType, state) values\n";
@@ -55,9 +54,9 @@ public class Executor {
 //        AREA_LIST.add(new Area("44", "广东省", "广东省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
 //        AREA_LIST.add(new Area("45", "广西壮族自治区", "广西壮族自治区", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
 //        AREA_LIST.add(new Area("46", "海南省", "海南省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
-//        AREA_LIST.add(new Area("50", "重庆市", "重庆市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
+        AREA_LIST.add(new Area("50", "重庆市", "重庆市", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
 //        AREA_LIST.add(new Area("51", "四川省", "四川省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
-        AREA_LIST.add(new Area("52", "贵州省", "贵州省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
+//        AREA_LIST.add(new Area("52", "贵州省", "贵州省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
 //        AREA_LIST.add(new Area("53", "云南省", "云南省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
 //        AREA_LIST.add(new Area("54", "西藏自治区", "西藏自治区", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
 //        AREA_LIST.add(new Area("61", "陕西省", "陕西省", "40283f81513ec42d01513ec524150000", "0/40283f81513ec42d01513ec524150000", false));
@@ -87,9 +86,9 @@ public class Executor {
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("44").setCategoryName("广东省").setpNames("广东省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setIsLeaf(0).setSortNum(19).setLevel(1).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("45").setCategoryName("广西壮族自治区").setpNames("广西壮族自治区").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setSortNum(20).setIsLeaf(0).setLevel(1).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("46").setCategoryName("海南省").setpNames("海南省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setIsLeaf(0).setSortNum(21).setLevel(1).build());
-//        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("50").setCategoryName("重庆市").setpNames("重庆市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setIsLeaf(0).setSortNum(22).setLevel(1).build());
+        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("50").setCategoryName("重庆市").setpNames("重庆市").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setIsLeaf(0).setSortNum(22).setLevel(1).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("51").setCategoryName("四川省").setpNames("四川省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setIsLeaf(0).setSortNum(23).setLevel(1).build());
-        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("52").setCategoryName("贵州省").setpNames("贵州省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setIsLeaf(0).setSortNum(24).setLevel(1).build());
+//        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("52").setCategoryName("贵州省").setpNames("贵州省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setIsLeaf(0).setSortNum(24).setLevel(1).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("53").setCategoryName("云南省").setpNames("云南省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setIsLeaf(0).setSortNum(25).setLevel(1).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("54").setCategoryName("西藏自治区").setpNames("西藏自治区").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setIsLeaf(0).setSortNum(26).setLevel(1).build());
 //        CATEGORY_LIST.add(new Category.CategoryBuilder().setCategoryCode("61").setCategoryName("陕西省").setpNames("陕西省").setpId("40283f81513ec42d01513ec524150000").setpIds("0/40283f81513ec42d01513ec524150000").setCategoryType(3).setIsLeaf(0).setSortNum(27).setLevel(1).build());
@@ -108,7 +107,7 @@ public class Executor {
     public static void main(String[] args) {
         int len = CATEGORY_LIST.size();
         for (int i = 0; i < len; i++) {
-            index = i;
+            int index = i;
             ROOT_CATEGORY = CATEGORY_LIST.get(index);
             try {
                 run(index);
@@ -226,6 +225,12 @@ public class Executor {
         int index = 0;
 
         for (Map.Entry<String, Category> entry : pidMark.entrySet()) {
+            int rmove = entry.getKey().indexOf("/");
+            if (rmove != -1) {
+                //pidMark.remove(entry.getKey());
+                continue;
+            }
+
             String id = entry.getKey();
             Category category = entry.getValue();
             String line1;
@@ -461,7 +466,7 @@ public class Executor {
                     pidMark.put(category.getCategoryCode(), category);
                     log.info(" 抓取: {}--{}--{}", parentArea.fullName.replaceAll("/", "--"), category.getCategoryName(), category.getCategoryCode());
                 } else if ("citytr".equalsIgnoreCase(className)){
-                    pidMark.put(CATEGORY_LIST.get(index).getCategoryCode()+"0000/" + category.getCategoryCode(), CATEGORY_LIST.get(index));
+                    pidMark.put(ROOT_CATEGORY.getCategoryCode()+"0000/" + category.getCategoryCode(), ROOT_CATEGORY);
                     areas.add(new Area(Util.getShortAreaId(areaId), areaName, parentArea.name + '/' + areaName, ROOT_CATEGORY.getId(), "", leaf));
                 }
             }

@@ -85,12 +85,14 @@ public class Util {
             for(Map.Entry<String,Category> mapEntry : pidMark.entrySet()){
                 boolean contains = mapEntry.getKey().contains("/" + code);
                 if (contains) {
-                    category = pidMark.get(mapEntry.getKey().split("/")[0]);
+                    category = mapEntry.getValue();
                     category1.setpId(category.getId());
                     category1.setpIds(category.getpIds() + "/" + category.getId());
                     category1.setpNames(category.getpNames());
                     int result = getLevel(category1);
                     category1.setLevel(result);
+
+                    //pidMark.remove(mapEntry.getKey());
                 }
             }
         }
