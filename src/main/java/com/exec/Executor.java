@@ -16,10 +16,7 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 import java.net.SocketTimeoutException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 爬取数据
@@ -152,7 +149,16 @@ public class Executor {
         int count = 50;
         int index = 0;
 
-        for (Map.Entry<String, Category> entry : pidMark.entrySet()) {
+        Set<Map.Entry<String, Category>> set = pidMark.entrySet();
+        Iterator<Map.Entry<String, Category>> iterator = set.iterator();
+        while(iterator.hasNext()){
+            Map.Entry<String, Category> entry = iterator.next();
+            int rmove = entry.getKey().indexOf("/");
+            if (rmove != -1) {
+                iterator.remove();
+                continue;
+            }
+
             String id = entry.getKey();
             Category category = entry.getValue();
             String line1;
@@ -224,10 +230,14 @@ public class Executor {
         int count = 50;
         int index = 0;
 
-        for (Map.Entry<String, Category> entry : pidMark.entrySet()) {
+        Set<Map.Entry<String, Category>> set = pidMark.entrySet();
+        Iterator<Map.Entry<String, Category>> iterator=set.iterator();
+        while(iterator.hasNext()){
+            Map.Entry<String, Category> entry=iterator.next();
+
             int rmove = entry.getKey().indexOf("/");
             if (rmove != -1) {
-                //pidMark.remove(entry.getKey());
+                iterator.remove();
                 continue;
             }
 
