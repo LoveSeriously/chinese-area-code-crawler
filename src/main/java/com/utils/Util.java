@@ -70,13 +70,9 @@ public class Util {
      */
     public static Category getCategoryByParent(Map<String, Category> pidMark, String parentCode) {
         Category category1 = new Category.CategoryBuilder().build();
+
         String code = Util.getParentCode(parentCode);
 
-        /*if (parentCode.length() == 4 && mark.getValue().getCategoryCode().length() == 4) { // 市 下面的市辖区 ,县
-             category1.setpId(mark.getValue().getId());
-             category1.setpIds(mark.getValue().getpIds() + "/" + mark.getValue().getId());
-             category1.setpNames(mark.getValue().getpNames());
-        }*/
         Category category = pidMark.get(code);
         if (null != category) {
             category1.setpId(category.getId());
@@ -84,6 +80,19 @@ public class Util {
             category1.setpNames(category.getpNames());
             int result = getLevel(category1);
             category1.setLevel(result);
+        } else {
+            // 市 下面的市辖区 ,县
+            for(Map.Entry<String,Category> mapEntry : pidMark.entrySet()){
+                boolean contains = mapEntry.getKey().contains("/" + code);
+                if (contains) {
+                    category = pidMark.get(mapEntry.getKey());
+                    category1.setpId(category.getId());
+                    category1.setpIds(category.getpIds() + "/" + category.getId());
+                    category1.setpNames(category.getpNames());
+                    int result = getLevel(category1);
+                    category1.setLevel(result);
+                }
+            }
         }
 
         return category1;
